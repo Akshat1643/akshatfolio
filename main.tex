@@ -1,0 +1,288 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=1.25 cm,
+    bottom=1.25 cm, 
+    left=1.5 cm,
+    right=1.5 cm,
+    footskip=1.0 cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Akshat_Agrawal RESUME},
+    pdfauthor={Akshat Agrawal},
+    pdfcreator={},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.35 cm}{0.20 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0.02 cm,
+        leftmargin=15pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.00001 cm}{0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.25}
+}{
+    \par\kern\topsep
+}
+
+\begin{document}
+
+%-------- HEADER --------
+\begin{header}
+\begin{minipage}[t]{0.62\textwidth}
+    \raggedright
+    {\fontsize{22pt}{22pt}\selectfont \textbf{Akshat Agrawal}}\\[4pt]
+    Software Developer \,|\, Full Stack Engineer\\
+    \vspace{0.10cm}
+    +91 7455966189 \,|\, \href{mailto:akshat160403@gmail.com}{akshat160403@gmail.com}\\
+    \vspace{0.10cm}
+    Ghaziabad, Uttar Pradesh
+    \vspace{0.10cm}
+\end{minipage}%
+\begin{minipage}[t]{0.38\textwidth}
+    \raggedleft
+    \vspace{0.01cm}
+    Github: \href{[github.com](https://github.com/Akshat1643}{\textit{Akshat1643}}\\
+    \vspace{0.10cm}
+    LinkedIn: \href{[linkedin.com](https://www.linkedin.com/in/akshat-agrawal-53a6b2283}{\textit{akshat-agrawal}}\\
+    \vspace{0.10cm}
+\end{minipage}
+\end{header}
+
+%-------- PROFESSIONAL SUMMARY --------
+\section{Professional Summary}
+\vspace{0.08cm}
+\begin{onecolentry}
+Software Developer with hands-on experience in full-stack web development using React.js, Node.js, and NestJS. Proven track record in delivering scalable web applications, real-time systems, and RESTful APIs while collaborating in Agile teams. Passionate about building performant products, exploring AI-driven solutions, and continuous learning.
+\end{onecolentry}
+
+%-------- EDUCATION --------
+\section{Education}
+
+\begin{twocolentry}{2021 -- 2025}
+\textbf{ABES Engineering College}, Ghaziabad\\
+\textit{B.Tech in Electronics Engineering}
+\end{twocolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry}{2019 \& 2021}
+\textbf{Nirmala Convent Sr. Sec. School}, Haldwani\\
+\textit{Class 10th (CBSE) - 89.6\% \,|\, Class 12th (CBSE) - 83.4\%}
+\end{twocolentry}
+
+%-------- TECHNICAL SKILLS --------
+\section{Technical Skills}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Languages}: JavaScript (ES6+), SQL
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Frontend}: React.js, Tailwind CSS, Bootstrap, Hooks, Context API, Responsive UI
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Backend}: Node.js, Express.js, NestJS, REST API Design, WebSockets, JWT Authentication
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Databases}: MySQL, MongoDB, Redis
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Tools}: Git, Postman, VS Code, Docker, Prisma, Sequelize
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Concepts}: Caching (Redis), Async Processing (BullMQ), Real-Time Systems, Scalable Architecture
+\end{onecolentry}
+\vspace{0.08cm}
+\begin{onecolentry}
+\textbf{Specialized}: Scalable API Design, WebSockets, BullMQ, Redis, Real-Time Communication, Backend Performance Optimization
+\end{onecolentry}
+
+%-------- PROJECTS --------
+\section{Projects}
+
+% --- Tambola ---
+\begin{twocolentry}{}
+\textbf{Tambola Multiplayer Game} \,|\, NestJS, WebSockets, Redis, BullMQ, Prisma, MySQL
+\end{twocolentry}
+
+\vspace{0.10cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Engineered a real-time multiplayer Tambola backend using NestJS and WebSockets, supporting concurrent game rooms with live state synchronization via Redis Pub/Sub.
+\item Implemented BullMQ for background job processing covering number draws, timers, and winner validation logic.
+\item Integrated Prisma ORM with MySQL for data handling, with auto-ticket generation and claim verification.
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10cm}
+
+% --- Butter App ---
+\begin{twocolentry}{}
+\textbf{Butter App -- Food Recommendation Platform} \,|\, Node.js, Express.js, MongoDB, Redis, REST APIs
+\end{twocolentry}
+
+\vspace{0.10cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Built backend services for a food recommendation platform with modular REST APIs for user preferences, restaurant data, and recommendation logic, including pagination, filtering, and sorting.
+\item Integrated MongoDB for flexible data storage and Redis caching to reduce response times.
+\item Optimized queries and indexing strategies to efficiently handle growing data volumes.
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10cm}
+
+% --- Kivo.ai ---
+\begin{twocolentry}{}
+\textbf{Kivo.ai -- AI-Powered CRM Platform} \,|\, React.js, Tailwind CSS, REST APIs, React Context
+\end{twocolentry}
+
+\vspace{0.10cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Built reusable, accessible UI components for an AI-powered CRM using React.js and Tailwind CSS, delivering fully responsive layouts across desktop, tablet, and mobile.
+\item Integrated frontend with RESTful APIs handling async flows, loading states, and error boundaries.
+\item Managed state via React Context and custom hooks for improved reusability across dashboard and form flows.
+\end{highlights}
+\end{onecolentry}
+
+\vspace{0.10cm}
+
+% --- Contact Sharing App ---
+\begin{twocolentry}{}
+\textbf{Contact Sharing App -- QR + AI Automation} \,|\, Node.js, Express.js, Google Gemini API, Redis, MySQL, JWT
+\end{twocolentry}
+
+\vspace{0.10cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Developed a scalable contact-sharing platform with QR-based exchange, JWT-secured APIs, and a Google Gemini-powered pipeline to extract structured data from visiting card images.
+\item Integrated Redis caching to reduce database load and improve API response times.
+\item Built a role-based admin panel for user management and platform analytics.
+\end{highlights}
+\end{onecolentry}
+
+%-------- EXPERIENCE --------
+\section{Experience}
+
+\begin{twocolentry}{14 May 2025 -- Present}
+\textbf{W3Villa Technologies Pvt. Ltd.}\\
+\textit{Software Developer}
+\end{twocolentry}
+
+\vspace{0.10cm}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Reduced API response time from 5 seconds to under 1 second by implementing Redis caching, resolving N+1 query issues, optimizing database queries, and improving indexing strategies across multiple production applications.
+\item Architected and developed scalable backend systems using NestJS, Node.js, and Express.js with microservice-friendly architecture, REST APIs, and real-time WebSocket communication for concurrent users.
+\item Built and scaled core products including a real-time multiplayer Tambola platform with WebSockets and BullMQ, a food recommendation platform with optimized recommendation APIs, and an AI-powered CRM (Kivo.ai) with dynamic dashboards and role-based access control.
+\item Engineered asynchronous workflows using BullMQ and Redis for background jobs, game logic, timers, event-driven processing, and real-time state synchronization to improve scalability and system reliability.
+\item Developed reusable React.js components and responsive user interfaces using Tailwind CSS, React Context, and custom hooks while integrating secure and scalable backend APIs.
+\end{highlights}
+\end{onecolentry}
+
+%-------- HONORS & AWARDS --------
+\section{Honors and Awards}
+
+\begin{twocolentry}{}
+\textit{Intellia Society Hackathon}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Ranked among the \textbf{Top 10 out of 50 participants}, demonstrating strong problem-solving and rapid prototyping skills under time-constrained conditions.
+\end{highlights}
+\end{onecolentry}
+
+%-------- EXTRACURRICULAR --------
+\section{Leadership \& Extracurricular Activities}
+
+\begin{twocolentry}{Aug 2022 -- 2025}
+\textit{Active Member} of \textbf{SAC Committee, ABES Engineering College}
+\end{twocolentry}
+
+\begin{onecolentry}
+\begin{highlights}
+\item Contributed to student activity planning and execution, coordinating events and initiatives that fostered engagement across the college community.
+\end{highlights}
+\end{onecolentry}
+
+\end{document}

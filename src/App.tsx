@@ -9,7 +9,7 @@ import { useState } from 'react'
 function App() {
   const { isDark, toggleTheme } = useTheme()
   const [mobileOpen, setMobileOpen] = useState(false)
-  const { about, certifications, contactLinks, hero, navItems, projects, skills, stats } =
+  const { about, certifications, contactLinks, experience, hero, navItems, projects, skills, stats } =
     portfolioData
 
   const contactEmail =
@@ -80,13 +80,13 @@ function App() {
             <span
               className={`grid h-10 w-10 place-items-center rounded-2xl border text-xs font-bold tracking-[0.28em] ${isDark ? 'border-white/15 bg-white/5 text-cyan-200' : 'border-cyan-600 bg-cyan-50 text-cyan-600'}`}
             >
-              PF
+              AA
             </span>
             <div className="hidden sm:block">
               <p className={`text-xs font-semibold tracking-[0.26em] uppercase ${palette.cardKicker}`}>
-                Portfolio
+                Akshat Portfolio
               </p>
-              <p className={`text-xs ${palette.subtle}`}>React</p>
+              <p className={`text-xs ${palette.subtle}`}>Full Stack Engineer</p>
             </div>
           </button>
 
@@ -123,7 +123,11 @@ function App() {
                 </svg>
               )}
             </button>
-            <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
+            <ThemeToggle
+              isDark={isDark}
+              onToggle={toggleTheme}
+              className={`rounded-full border px-3 py-1.5 text-xs sm:text-sm font-semibold transition ${palette.primaryAction}`}
+            />
             <a
               href={hero.ctaTertiary.href}
               download
@@ -270,7 +274,7 @@ function App() {
         <Reveal as="section" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16 scroll-mt-28" id="about">
           <SectionHeading
             eyebrow="About"
-            title="A portfolio layout that feels polished from the first screen"
+            title="Software Developer Profile and Core Strengths"
             description={about.summary}
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
@@ -305,8 +309,8 @@ function App() {
         <Reveal as="section" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16 scroll-mt-28" id="skills">
           <SectionHeading
             eyebrow="Skills"
-            title="A clear breakdown of the tools and systems used most often"
-            description="Organized into focused groups so the page reads like a real technical portfolio, not a random pile of keywords."
+            title="Technical skills across frontend, backend, and scalable systems"
+            description="Core technologies and engineering practices used to build reliable, high-performance web applications."
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {skills.map((group, index) => (
@@ -330,11 +334,45 @@ function App() {
           </div>
         </Reveal>
 
+        <Reveal as="section" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16 scroll-mt-28" id="experience">
+          <SectionHeading
+            eyebrow="Experience"
+            title="Professional experience and measurable delivery impact"
+            description="Work focused on API optimization, real-time architecture, and full-stack product development."
+          />
+          <div className="mt-8 grid gap-4">
+            {experience.map((item) => (
+              <Reveal
+                as="article"
+                key={item.role + item.company}
+                className={`rounded-4xl border p-6 shadow-xl shadow-slate-950/15 ${palette.panelMuted}`}
+              >
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <p className={`text-sm uppercase tracking-[0.26em] ${palette.cardKicker}`}>{item.period}</p>
+                    <h3 className={`mt-2 text-2xl font-bold ${palette.heading}`}>{item.role}</h3>
+                    <p className={`mt-1 text-base ${palette.body}`}>{item.company}</p>
+                  </div>
+                  <p className={`text-sm ${palette.subtle}`}>{item.location}</p>
+                </div>
+                <ul className={`mt-5 grid gap-3 text-sm leading-7 ${palette.body}`}>
+                  {item.highlights.map((highlight) => (
+                    <li key={highlight} className="flex gap-3">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-300" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ))}
+          </div>
+        </Reveal>
+
         <Reveal as="section" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16 scroll-mt-28" id="certifications">
           <SectionHeading
-            eyebrow="Certifications"
-            title="A compact credentials block that still feels premium"
-            description="Keep the certifications visible without overwhelming the rest of the page."
+            eyebrow="Credentials"
+            title="Education, achievements, and leadership highlights"
+            description="Academic background, hackathon recognition, and extracurricular leadership experience."
           />
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {certifications.map((certification, index) => (
@@ -355,8 +393,8 @@ function App() {
         <Reveal as="section" className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16 scroll-mt-28" id="portfolio">
           <SectionHeading
             eyebrow="Projects"
-            title="Selected work presented as reusable project cards"
-            description="Each card can be swapped with your own projects later without changing the layout."
+            title="Selected projects in full-stack and real-time development"
+            description="Projects covering scalable APIs, WebSockets, AI-enabled features, and performance-focused implementation."
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
@@ -406,8 +444,8 @@ function App() {
           <div className={`rounded-[2.25rem] border p-8 shadow-2xl shadow-cyan-950/20 sm:p-10 ${palette.contactWrap}`}>
             <SectionHeading
               eyebrow="Contact"
-              title="A final section that makes next steps obvious"
-              description="Use the form below to open the recipient email client, or use the links beside it."
+              title="Get in Touch for Opportunities and Collaboration"
+              description="Reach out via email, phone, LinkedIn, or GitHub for full-time roles, freelance work, or technical discussions."
             />
             <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="grid gap-4">

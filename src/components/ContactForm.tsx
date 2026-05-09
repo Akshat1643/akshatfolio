@@ -146,7 +146,8 @@ export function ContactForm({ recipientEmail, className = '', isDark = true }: C
         </p>
         <button
           type="submit"
-          className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r px-6 py-3 font-semibold transition hover:opacity-90 ${buttonClassName}`}
+          className={`inline-flex items-center justify-center rounded-full bg-gradient-to-r l px-6 py-3 font-semibold transition hover:opacity-90 ${buttonClassName}`}
+           style={{ width: "31%" }}
         >
           Send message
         </button>
